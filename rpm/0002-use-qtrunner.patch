@@ -1,0 +1,23 @@
+diff --git a/org.kde.tokodon.desktop b/org.kde.tokodon.desktop
+index d7d6c77..bf80329 100644
+--- a/org.kde.tokodon.desktop
++++ b/org.kde.tokodon.desktop
+@@ -84,7 +84,7 @@ Comment[tr]=Mastodon için istemci
+ Comment[uk]=Клієнт мережі Mastodon
+ Comment[x-test]=xxClient for the Mastodonxx
+ Comment[zh_CN]=Mastodon 客户端
+-Exec=tokodon %u
++Exec=/usr/bin/qt-runner tokodon %u
+ Terminal=false
+ Icon=org.kde.tokodon
+ Type=Application
+@@ -92,3 +92,9 @@ Categories=Network;InstantMessaging;X-SocialMedia
+ X-KDE-FormFactor=desktop;tablet;handset;
+ SingleMainWindow=true
+ MimeType=x-scheme-handler/web+ap;
++
++X-Nemo-Single-Instance=no
++X-Nemo-Application-Type=no-invoker
++
++[X-Sailjail]
++Sandboxing=Disabled
