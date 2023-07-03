@@ -35,12 +35,16 @@ BuildRequires:  opt-qt5-qtmultimedia-devel
 BuildRequires:  opt-qt5-qtquickcontrols2-devel
 BuildRequires:  opt-qt5-qtsvg-devel
 BuildRequires:  opt-qt5-qtwebsockets-devel
+BuildRequires:  mpv-devel
+BuildRequires:  opt-qt5-qtkeychain-devel
 
 Requires:       opt-kf5-kirigami2
 Requires:       opt-kf5-kirigami-addons
 Requires:       qt-runner
 Requires:       opt-qt5-qtmultimedia
 Requires:       opt-qt5-qtwebsockets
+Requires:       mpv
+Requires:       opt-qt5-qtkeychain
 
 %{?opt_kf5_default_filter}
 
