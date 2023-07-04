@@ -45,6 +45,7 @@ Requires:       opt-qt5-qtmultimedia
 Requires:       opt-qt5-qtwebsockets
 Requires:       mpv
 Requires:       opt-qt5-qtkeychain
+Requires:       opt-kf5-purpose
 
 %{?opt_kf5_default_filter}
 
