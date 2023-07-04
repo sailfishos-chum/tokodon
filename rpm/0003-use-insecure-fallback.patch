@@ -1,5 +1,5 @@
 diff --git a/src/account/account.cpp b/src/account/account.cpp
-index 045f2a9..fcae18e 100644
+index 045f2a9..ca7e296 100644
 --- a/src/account/account.cpp
 +++ b/src/account/account.cpp
 @@ -300,11 +300,13 @@ void Account::writeToSettings()
@@ -16,7 +16,23 @@ index 045f2a9..fcae18e 100644
      clientSecretJob->setKey(clientSecretKey());
      clientSecretJob->setTextData(m_client_secret);
      clientSecretJob->start();
-@@ -353,4 +355,4 @@ void Account::checkForFollowRequests()
+@@ -318,6 +320,7 @@ void Account::buildFromSettings(const AccountConfig &settings)
+     m_ignoreSslErrors = settings.ignoreSslErrors();
+ 
+     auto accessTokenJob = new QKeychain::ReadPasswordJob{"Tokodon", this};
++    accessTokenJob->setInsecureFallback(true);
+     accessTokenJob->setKey(accessTokenKey());
+ 
+     QObject::connect(accessTokenJob, &QKeychain::ReadPasswordJob::finished, [this, accessTokenJob]() {
+@@ -329,6 +332,7 @@ void Account::buildFromSettings(const AccountConfig &settings)
+     accessTokenJob->start();
+ 
+     auto clientSecretJob = new QKeychain::ReadPasswordJob{"Tokodon", this};
++    clientSecretJob->setInsecureFallback(true);
+     clientSecretJob->setKey(clientSecretKey());
+ 
+     QObject::connect(clientSecretJob, &QKeychain::ReadPasswordJob::finished, [this, clientSecretJob]() {
+@@ -353,4 +357,4 @@ void Account::checkForFollowRequests()
              Q_EMIT hasFollowRequestsChanged();
          }
      });
