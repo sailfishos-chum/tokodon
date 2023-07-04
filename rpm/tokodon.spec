@@ -10,9 +10,9 @@ Source1:        org.kde.tokodon-86.png
 Source2:        org.kde.tokodon-108.png
 Source3:        org.kde.tokodon-128.png
 Source4:        org.kde.tokodon-256.png
-Patch0:         0001-dont-require-desktop-style.patch
+#Patch0:         0001-dont-require-desktop-style.patch
 Patch1:         0002-use-qtrunner.patch
-Patch2:         0003-use-insecure-fallback.patch
+#Patch2:         0003-use-insecure-fallback.patch
 
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
@@ -27,7 +27,7 @@ BuildRequires:  opt-kf5-kdbusaddons-devel
 BuildRequires:  opt-kf5-ki18n-devel
 BuildRequires:  opt-kf5-kio-devel
 BuildRequires:  opt-kf5-kirigami2-devel
-BuildRequires:  opt-kf5-kirigami-addons
+BuildRequires:  opt-kf5-kirigami-addons >= 0.9.0
 BuildRequires:  opt-kf5-knotifications-devel
 BuildRequires:  opt-kf5-kwindowsystem-devel
 BuildRequires:  opt-qt5-qtbase-devel
@@ -65,7 +65,8 @@ pushd build
 
 %_opt_cmake_kf5 ../ \
 		-DKDE_INSTALL_BINDIR:PATH=/usr/bin \
-		-DCMAKE_INSTALL_PREFIX:PATH=/usr/
+		-DCMAKE_INSTALL_PREFIX:PATH=/usr/ \
+		-DSAILFISHOS=on
 %make_build
 popd
 
