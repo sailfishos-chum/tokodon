@@ -1,0 +1,25 @@
+diff --git a/src/account/account.cpp b/src/account/account.cpp
+index 045f2a9..fcae18e 100644
+--- a/src/account/account.cpp
++++ b/src/account/account.cpp
+@@ -300,11 +300,13 @@ void Account::writeToSettings()
+     config.save();
+ 
+     auto accessTokenJob = new QKeychain::WritePasswordJob{"Tokodon", this};
++    accessTokenJob->setInsecureFallback(true);
+     accessTokenJob->setKey(accessTokenKey());
+     accessTokenJob->setTextData(m_token);
+     accessTokenJob->start();
+ 
+     auto clientSecretJob = new QKeychain::WritePasswordJob{"Tokodon", this};
++    clientSecretJob->setInsecureFallback(true);
+     clientSecretJob->setKey(clientSecretKey());
+     clientSecretJob->setTextData(m_client_secret);
+     clientSecretJob->start();
+@@ -353,4 +355,4 @@ void Account::checkForFollowRequests()
+             Q_EMIT hasFollowRequestsChanged();
+         }
+     });
+-}
+\ No newline at end of file
++}
