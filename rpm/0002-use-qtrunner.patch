@@ -7,7 +7,7 @@ index d7d6c77..bf80329 100644
  Comment[x-test]=xxClient for the Mastodonxx
  Comment[zh_CN]=Mastodon 客户端
 -Exec=tokodon %u
-+Exec=/usr/bin/qt-runner tokodon %u
++Exec=env KDE_FULL_SESSION=1 KDE_SESSION_VERSION=5 qt-runner tokodon %u
  Terminal=false
  Icon=org.kde.tokodon
  Type=Application
