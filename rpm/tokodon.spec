@@ -10,9 +10,7 @@ Source1:        org.kde.tokodon-86.png
 Source2:        org.kde.tokodon-108.png
 Source3:        org.kde.tokodon-128.png
 Source4:        org.kde.tokodon-256.png
-#Patch0:         0001-dont-require-desktop-style.patch
-Patch1:         0002-use-qtrunner.patch
-#Patch2:         0003-use-insecure-fallback.patch
+Patch0:         0002-use-qtrunner.patch
 
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
