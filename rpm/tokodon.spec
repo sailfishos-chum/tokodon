@@ -1,5 +1,5 @@
 Name:           tokodon
-Version:        23.04.2
+Version:        23.08.5
 Release:        1%{?dist}
 License:        GPLv3 and CC0 and BSD and LGPLv2+ and GPLv3+ and GPLv2
 # For a breakdown of the licensing, see PACKAGE-LICENSING
@@ -58,20 +58,14 @@ Tokodon is a Mastodon client for Plasma and Plasma Mobile.
 export QTDIR=%{_opt_qt5_prefix}
 touch .git
 
-mkdir -p build
-pushd build
-
 %_opt_cmake_kf5 ../ \
 		-DKDE_INSTALL_BINDIR:PATH=/usr/bin \
 		-DCMAKE_INSTALL_PREFIX:PATH=/usr/ \
 		-DSAILFISHOS=on
-%make_build
-popd
+%cmake_build
 
 %install
-pushd build
-make DESTDIR=%{buildroot} install
-popd
+%cmake_install
 
 #Rmove the appsteam metadata file
 rm %{buildroot}/usr/share/metainfo/org.kde.tokodon.appdata.xml
