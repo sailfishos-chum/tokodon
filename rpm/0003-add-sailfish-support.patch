@@ -1,0 +1,33 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 179b472d..926fcf34 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -122,14 +122,14 @@ else()
+     )
+ endif()
+ 
+-if (UNIX AND NOT APPLE AND NOT ANDROID)
++if (UNIX AND NOT APPLE AND NOT ANDROID AND NOT SAILFISHOS)
+     find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS KIO)
+     set_package_properties(KF6KIO PROPERTIES
+             PURPOSE "Sharing content and downloading files"
+     )
+ endif ()
+ 
+-if (UNIX AND NOT APPLE AND NOT ANDROID AND NOT TOKODON_FLATPAK)
++if (UNIX AND NOT APPLE AND NOT ANDROID AND NOT TOKODON_FLATPAK AND NOT SAILFISHOS)
+     find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Purpose)
+     set_package_properties(KF6Purpose PROPERTIES
+             PURPOSE "Sharing content from other KDE applications"
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index d7c60e01..ab8f5f75 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -575,6 +575,6 @@ if(BUILD_TESTING AND NOT ANDRIOID)
+     install(TARGETS tokodon-offline ${KF6_INSTALL_TARGETS_DEFAULT_ARGS})
+ endif()
+ 
+-if (UNIX AND NOT APPLE AND NOT ANDROID AND NOT TOKODON_FLATPAK)
++if (UNIX AND NOT APPLE AND NOT ANDROID AND NOT TOKODON_FLATPAK AND NOT SAILFISHOS)
+     add_subdirectory(purpose)
+ endif ()

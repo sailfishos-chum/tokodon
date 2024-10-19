@@ -1,5 +1,5 @@
 Name:           tokodon
-Version:        23.08.5
+Version:        24.08.2
 Release:        1%{?dist}
 License:        GPLv3 and CC0 and BSD and LGPLv2+ and GPLv3+ and GPLv2
 # For a breakdown of the licensing, see PACKAGE-LICENSING
@@ -11,42 +11,41 @@ Source2:        org.kde.tokodon-108.png
 Source3:        org.kde.tokodon-128.png
 Source4:        org.kde.tokodon-256.png
 Patch0:         0002-use-qtrunner.patch
+Patch1:         0003-add-sailfish-support.patch
 
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
 BuildRequires:  cmake
-BuildRequires:  opt-extra-cmake-modules
-BuildRequires:  opt-kf5-rpm-macros
+BuildRequires:  kf6-extra-cmake-modules
+BuildRequires:  kf6-rpm-macros
 BuildRequires:  desktop-file-utils
 
-BuildRequires:  opt-kf5-kconfig-devel
-BuildRequires:  opt-kf5-kcoreaddons-devel
-BuildRequires:  opt-kf5-kdbusaddons-devel
-BuildRequires:  opt-kf5-ki18n-devel
-BuildRequires:  opt-kf5-kio-devel
-BuildRequires:  opt-kf5-kirigami2-devel
-BuildRequires:  opt-kf5-kirigami-addons >= 0.9.0
-BuildRequires:  opt-kf5-knotifications-devel
-BuildRequires:  opt-kf5-kwindowsystem-devel
-BuildRequires:  opt-qt5-qtbase-devel
-BuildRequires:  opt-qt5-qtkeychain-devel
-BuildRequires:  opt-qt5-qtmultimedia-devel
-BuildRequires:  opt-qt5-qtquickcontrols2-devel
-BuildRequires:  opt-qt5-qtsvg-devel
-BuildRequires:  opt-qt5-qtwebsockets-devel
+BuildRequires:  kf6-kconfig-devel
+BuildRequires:  kf6-kcoreaddons-devel
+BuildRequires:  kf6-kdbusaddons-devel
+BuildRequires:  kf6-ki18n-devel
+#BuildRequires:  kf6-kio-devel
+BuildRequires:  kf6-kirigami-devel
+BuildRequires:  kf6-kirigami-addons-devel
+BuildRequires:  kf6-knotifications-devel
+BuildRequires:  kf6-kwindowsystem-devel
+BuildRequires:  qt6-qtbase-devel
+BuildRequires:  qt6-qtkeychain-devel
+BuildRequires:  qt6-qtmultimedia-devel
+BuildRequires:  qt6-qtsvg-devel
+BuildRequires:  qt6-qtwebsockets-devel
 BuildRequires:  mpv-devel
-BuildRequires:  opt-qt5-qtkeychain-devel
+BuildRequires:  qt6-qtkeychain-devel
 
-Requires:       opt-kf5-kirigami2
-Requires:       opt-kf5-kirigami-addons
-Requires:       qt-runner
-Requires:       opt-qt5-qtmultimedia
-Requires:       opt-qt5-qtwebsockets
+Requires:       kf6-kirigami
+Requires:       kf6-kirigami-addons
+Requires:       qt-runner-qt6
+Requires:       qt6-qtmultimedia
+Requires:       qt6-qtwebsockets
 Requires:       mpv
-Requires:       opt-qt5-qtkeychain
-Requires:       opt-kf5-purpose
+Requires:       qt6-qtkeychain
+Requires:       kf6-purpose
 
-%{?opt_kf5_default_filter}
 
 %description
 Tokodon is a Mastodon client for Plasma and Plasma Mobile.
@@ -55,13 +54,9 @@ Tokodon is a Mastodon client for Plasma and Plasma Mobile.
 %autosetup -n %{name}-%{version}/upstream -p1
 
 %build
-export QTDIR=%{_opt_qt5_prefix}
-touch .git
-
-%_opt_cmake_kf5 ../ \
-		-DKDE_INSTALL_BINDIR:PATH=/usr/bin \
-		-DCMAKE_INSTALL_PREFIX:PATH=/usr/ \
-		-DSAILFISHOS=on
+%cmake_kf6 \
+		-DSAILFISHOS=ON \
+		-DUSE_QTMULTIMEDIA=YES
 %cmake_build
 
 %install
