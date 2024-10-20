@@ -87,3 +87,6 @@ install -p -m644 -D %{SOURCE4} \
 %{_datadir}/applications/org.kde.%{name}.desktop
 %{_datadir}/icons/hicolor/scalable/apps/org.kde.%{name}.svg
 %{_datadir}/icons/hicolor/*/apps/org.kde.%{name}.*
+%{_datadir}/icons/hicolor/scalable/actions/%{name}.*.svg
+%{_datadir}/knotifications6/tokodon.notifyrc
+%{_datadir}/qlogging-categories6/tokodon.categories
