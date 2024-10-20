@@ -36,6 +36,9 @@ BuildRequires:  qt6-qtsvg-devel
 BuildRequires:  qt6-qtwebsockets-devel
 BuildRequires:  mpv-devel
 BuildRequires:  qt6-qtkeychain-devel
+BuildRequires:  kf6-kitemmodels-devel
+BuildRequires:  kf6-sonnet-devel
+BuildRequires:  kf6-kcolorscheme-devel
 
 Requires:       kf6-kirigami
 Requires:       kf6-kirigami-addons
@@ -84,5 +87,3 @@ install -p -m644 -D %{SOURCE4} \
 %{_datadir}/applications/org.kde.%{name}.desktop
 %{_datadir}/icons/hicolor/scalable/apps/org.kde.%{name}.svg
 %{_datadir}/icons/hicolor/*/apps/org.kde.%{name}.*
-%{_datadir}/knotifications5/tokodon.notifyrc
-%{_datadir}/qlogging-categories5/tokodon.categories
