@@ -20,19 +20,31 @@ index 179b472d..926fcf34 100644
      set_package_properties(KF6Purpose PROPERTIES
              PURPOSE "Sharing content from other KDE applications"
 diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
-index d7c60e01..d8f8f571 100644
+index d7c60e01..14f1640f 100644
 --- a/src/CMakeLists.txt
 +++ b/src/CMakeLists.txt
-@@ -318,7 +318,7 @@ if (BUILD_TESTING)
+@@ -318,12 +318,14 @@ if (BUILD_TESTING)
      )
  endif()
  
 -if(ANDROID)
+-    target_sources(tokodon_static
+-        PRIVATE
+-        utils/androidutils.cpp
+-        utils/androidutils.h
+-    )
 +if(ANDROID OR SAILFISHOS)
-     target_sources(tokodon_static
-         PRIVATE
-         utils/androidutils.cpp
-@@ -575,6 +575,6 @@ if(BUILD_TESTING AND NOT ANDRIOID)
++    if(ANDROID)
++        target_sources(tokodon_static
++            PRIVATE
++            utils/androidutils.cpp
++            utils/androidutils.h
++        )
++    endif()
+     qt_target_qml_sources(tokodon_static
+         QML_FILES
+         content/ui/Android/ShareAction.qml
+@@ -575,6 +577,6 @@ if(BUILD_TESTING AND NOT ANDRIOID)
      install(TARGETS tokodon-offline ${KF6_INSTALL_TARGETS_DEFAULT_ARGS})
  endif()
  
