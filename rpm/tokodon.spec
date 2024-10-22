@@ -24,7 +24,6 @@ BuildRequires:  kf6-kconfig-devel
 BuildRequires:  kf6-kcoreaddons-devel
 BuildRequires:  kf6-kdbusaddons-devel
 BuildRequires:  kf6-ki18n-devel
-#BuildRequires:  kf6-kio-devel
 BuildRequires:  kf6-kirigami-devel
 BuildRequires:  kf6-kirigami-addons-devel
 BuildRequires:  kf6-knotifications-devel
@@ -45,9 +44,8 @@ Requires:       kf6-kirigami-addons
 Requires:       qt-runner-qt6
 Requires:       qt6-qtmultimedia
 Requires:       qt6-qtwebsockets
-Requires:       mpv
 Requires:       qt6-qtkeychain
-Requires:       kf6-purpose
+Requires:       kf6-kitemmodesl
 
 
 %description
