@@ -33,7 +33,7 @@ BuildRequires:  qt6-qtkeychain-devel
 BuildRequires:  qt6-qtmultimedia-devel
 BuildRequires:  qt6-qtsvg-devel
 BuildRequires:  qt6-qtwebsockets-devel
-BuildRequires:  mpv-devel
+BuildRequires:  kf6-mpvqt-devel
 BuildRequires:  qt6-qtkeychain-devel
 BuildRequires:  kf6-kitemmodels-devel
 BuildRequires:  kf6-sonnet-devel
