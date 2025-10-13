@@ -38,6 +38,7 @@ BuildRequires:  qt6-qtkeychain-devel
 BuildRequires:  kf6-kitemmodels-devel
 BuildRequires:  kf6-sonnet-devel
 BuildRequires:  kf6-kcolorscheme-devel
+BuildRequires:  qcoro-qt6-devel
 
 Requires:       kf6-kirigami
 Requires:       kf6-kirigami-addons
