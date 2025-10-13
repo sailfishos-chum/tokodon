@@ -1,5 +1,5 @@
 Name:           tokodon
-Version:        24.08.2
+Version:        25.08.2
 Release:        1%{?dist}
 License:        GPLv3 and CC0 and BSD and LGPLv2+ and GPLv3+ and GPLv2
 # For a breakdown of the licensing, see PACKAGE-LICENSING

@@ -1,29 +1,30 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 179b472d..926fcf34 100644
+index 4704df17..6cebd332 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -122,14 +122,14 @@ else()
+@@ -102,7 +102,7 @@ else()
      )
  endif()
  
 -if (UNIX AND NOT APPLE AND NOT ANDROID)
 +if (UNIX AND NOT APPLE AND NOT ANDROID AND NOT SAILFISHOS)
-     find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS KIO)
+     find_package(KF6KIO ${KF_MIN_VERSION})
      set_package_properties(KF6KIO PROPERTIES
-             PURPOSE "Sharing content and downloading files"
+             TYPE REQUIRED
+@@ -110,7 +110,7 @@ if (UNIX AND NOT APPLE AND NOT ANDROID)
      )
  endif ()
  
 -if (UNIX AND NOT APPLE AND NOT ANDROID AND NOT TOKODON_FLATPAK)
 +if (UNIX AND NOT APPLE AND NOT ANDROID AND NOT TOKODON_FLATPAK AND NOT SAILFISHOS)
-     find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Purpose)
+     find_package(KF6Purpose ${KF_MIN_VERSION})
      set_package_properties(KF6Purpose PROPERTIES
-             PURPOSE "Sharing content from other KDE applications"
+             TYPE REQUIRED
 diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
-index d7c60e01..14f1640f 100644
+index 134ec467..7a0211e3 100644
 --- a/src/CMakeLists.txt
 +++ b/src/CMakeLists.txt
-@@ -318,12 +318,14 @@ if (BUILD_TESTING)
+@@ -368,12 +368,14 @@ if (BUILD_TESTING)
      )
  endif()
  
@@ -44,7 +45,7 @@ index d7c60e01..14f1640f 100644
      qt_target_qml_sources(tokodon_static
          QML_FILES
          content/ui/Android/ShareAction.qml
-@@ -575,6 +577,6 @@ if(BUILD_TESTING AND NOT ANDRIOID)
+@@ -636,6 +638,6 @@ if(BUILD_TESTING AND NOT ANDRIOID)
      install(TARGETS tokodon-offline ${KF6_INSTALL_TARGETS_DEFAULT_ARGS})
  endif()
  
