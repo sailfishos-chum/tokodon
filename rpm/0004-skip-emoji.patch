@@ -1,5 +1,5 @@
 diff --git a/src/utils/emojitones.cpp b/src/utils/emojitones.cpp
-index 434bd950..c84f9c3a 100644
+index 434bd950..ae681de8 100644
 --- a/src/utils/emojitones.cpp
 +++ b/src/utils/emojitones.cpp
 @@ -5,5 +5,9 @@
@@ -9,6 +9,6 @@ index 434bd950..c84f9c3a 100644
 +#ifndef SAILFISHOS
  #include "utils/emojitones_data.h"
 +#else
-+    (QStringLiteral(""), QVariant())
++    {QStringLiteral(""), QVariant()}
 +#endif
  };
