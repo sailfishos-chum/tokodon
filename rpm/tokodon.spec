@@ -50,7 +50,7 @@ Requires:       qt-runner-qt6
 Requires:       qt6-qtmultimedia
 Requires:       qt6-qtwebsockets
 Requires:       qt6-qtkeychain
-Requires:       kf6-kitemmodesl
+Requires:       kf6-kitemmodels
 
 
 %description
