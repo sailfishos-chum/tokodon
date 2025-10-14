@@ -1,0 +1,14 @@
+diff --git a/src/utils/emojitones.cpp b/src/utils/emojitones.cpp
+index 434bd950..c84f9c3a 100644
+--- a/src/utils/emojitones.cpp
++++ b/src/utils/emojitones.cpp
+@@ -5,5 +5,9 @@
+ #include "utils/emojimodel.h"
+ 
+ QMultiHash<QString, QVariant> EmojiTones::_tones = {
++#ifndef SAILFISHOS
+ #include "utils/emojitones_data.h"
++#else
++    (QStringLiteral(""), QVariant())
++#endif
+ };

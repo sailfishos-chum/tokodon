@@ -12,6 +12,7 @@ Source3:        org.kde.tokodon-128.png
 Source4:        org.kde.tokodon-256.png
 Patch0:         0002-use-qtrunner.patch
 Patch1:         0003-add-sailfish-support.patch
+Patch2:         0004-skip-emoji.patch
 
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
