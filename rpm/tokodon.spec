@@ -92,4 +92,3 @@ install -p -m644 -D %{SOURCE4} \
 %{_datadir}/icons/hicolor/*/apps/org.kde.%{name}.*
 %{_datadir}/knotifications6/tokodon.notifyrc
 %{_datadir}/qlogging-categories6/tokodon.categories
-%{_datadir}/metainfo/org.kde.tokodon.appdata.xml
