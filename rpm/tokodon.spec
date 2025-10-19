@@ -51,6 +51,7 @@ Requires:       qt6-qtmultimedia
 Requires:       qt6-qtwebsockets
 Requires:       qt6-qtkeychain
 Requires:       kf6-kitemmodels
+Requires:       kf6-kdeclarative
 
 
 %description
