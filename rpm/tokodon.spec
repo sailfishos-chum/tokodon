@@ -46,7 +46,7 @@ BuildRequires:  qcoro-qt6-devel
 
 Requires:       kf6-kirigami
 Requires:       kf6-kirigami-addons
-Requires:       qt-runner-qt6
+Requires:       qt6-sailfishos-util
 Requires:       qt6-qtmultimedia
 Requires:       qt6-qtwebsockets
 Requires:       qt6-qtkeychain
