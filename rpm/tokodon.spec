@@ -1,5 +1,5 @@
 Name:           tokodon
-Version:        25.08.2
+Version:        26.04.3
 Release:        1%{?dist}
 License:        GPLv3 and CC0 and BSD and LGPLv2+ and GPLv3+ and GPLv2
 # For a breakdown of the licensing, see PACKAGE-LICENSING
@@ -10,7 +10,7 @@ Source1:        org.kde.tokodon-86.png
 Source2:        org.kde.tokodon-108.png
 Source3:        org.kde.tokodon-128.png
 Source4:        org.kde.tokodon-256.png
-Patch0:         0002-use-qtrunner.patch
+Patch0:         0002-use-qt6-start.patch
 Patch1:         0003-add-sailfish-support.patch
 Patch2:         0004-skip-emoji.patch
 
